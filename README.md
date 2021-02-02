@@ -1,70 +1,236 @@
-# Getting Started with Create React App
+# 统一代码风格
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Eslint
+Find and fix problems in your JavaScript code.
 
-## Available Scripts
+1. Install
+    ```
+    yarn add eslint --dev
+    ```
 
-In the project directory, you can run:
+2. Set up a configuration file
+    ```
+    yarn run eslint --init 
+    ```
+   创建 ` .eslintrc.js ` 文件，并使用 eslint-plugin-react, @typescript-eslint/eslint-plugin, eslint-config-airbnb, eslint,
+   eslint-plugin-import, eslint-plugin-jsx-a11y, eslint-plugin-react-hooks, @typescript-eslint/parser 等 package
 
-### `yarn start`
+   'off' or 0 - turn the rule off
+   
+   'warn' or 1 - turn the rule on as a warning (doesn't affect exit code)
+   
+   'error' or 2 - turn the rule on as an error (exit code will be 1)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. View .eslintrc.js
+    ```
+    module.exports = {
+        "parser": {},  //定义ESLint的解析器
+        "extends": [], // 定义文件继承的子规范
+        "plugins": [], // 定义了该eslint文件所依赖的插件
+        "env": {},
+        "rules": {}
+    }
+    ``` 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+4. Individual Rules
+    ```
+    rules: {
+        indent: ['error', 4],
+        quotes: ['error', 'single', { allowTemplateLiterals: true }],
+        'comma-dangle': ['error', 'never'],
+        'react/jsx-indent': ['error', 4],
+        'no-console': ['error', { allow: ['warn', 'error'] }],
+        'react/jsx-tag-spacing': [
+            'error',
+            {
+                closingSlash: 'never',
+                beforeSelfClosing: 'allow',
+                afterOpening: 'never',
+                beforeClosing: 'allow',
+            },
+        ],
+        'object-curly-spacing': ['warn', 'never'],
+        'react/jsx-filename-extension': [
+            'warn',
+            { extensions: ['.js', '.jsx'] },
+        ],
+        'react/jsx-indent-props': ['off', 'tab'],
+        'no-use-before-define': 'off',
+    }
+    ```
 
-### `yarn test`
+5. [All Rules](https://eslint.org/docs/rules/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. Ignore
+    ```
+    touch .eslintignore
+   
+    // .eslintignore
+    .eslintrc.js
+    ```
 
-### `yarn build`
+### Plugin
+1. [airbnb](https://github.com/airbnb/javascript#whitespace--spaces)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Prettier
+Prettier is an opinionated code formatter.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Install
+    ```
+    yarn add --dev --exact prettier
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Config file
+    ```
+    touch .prettierrc.js
+   
+    // .prettierrc.js
+    module.exports = {
+      ...fabric.prettier,
+      "singleQuote": true,
+      "trailingComma": "all",
+      "printWidth": 80,
+    };
+    ```
 
-### `yarn eject`
+3. Ignore file
+    ```
+    touch .prettierignore
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    // .prettierignore
+    # Ignore artifacts:
+    build
+    **/*.md
+    **/*.svg
+    **/*.ejs
+    **/*.html
+    package.json
+    ```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Eslint VS Prettier
+这里说下 Eslint 与 Prettier 之间的区别，二者的侧重点不同，前者是代码规范检查，如是否可以使用 var，尾逗号，函数括号前面是否留空格，便于团队保
+持比较统一的代码风格，而 Prettier 则是代码格式化插件，可以根据一定的规则对我们的 js、css、less、jsx、vue 等文件进行格式化，保证团队输出的代
+码是统一的，所以二者除了小部分规则有交集之外，二者是可以在我们的开发种相辅相成的。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+use Prettier for formatting and linters for catching bugs!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## [Husky](https://github.com/typicode/husky)
+Husky improves your commits and more 🐶 woof!
 
-## Learn More
+You can use it to lint your commit messages, run tests, lint code, etc... when you commit or push. Husky supports
+[all Git hooks](https://git-scm.com/docs/githooks).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Husky 是一个 git 钩子插件，支持所有的 Git Hooks 钩子，我们可以在这些钩子触发的时候执行某些命令或者操作
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Install
+    ```
+    yarn add husky@next --dev
+    ```
 
-### Code Splitting
+2. Enable Git hooks
+    ```
+    yarn husky install
+    ```
+3. Edit ` package.json `
+    ```
+    {
+      "private": true,
+      "scripts": {
+        "husky-test": "echo 'Hello world!'",
+        "postinstall": "husky install"
+      }
+    }
+    ```
+4. Add a Hook
+    ```
+    npx husky add .husky/pre-commit "yarn husky-test"
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   Husky 只是提供了提交时的钩子，然而有时候我们处理的项目并不是新项目，这个时候，可能只想对本次提交的代码，做代码检查，而不是对现有目录内所有
+   的文件做检查，所以我们需要引入 lint-staged 这个插件
 
-### Analyzing the Bundle Size
+## [lint-staged](https://github.com/okonet/lint-staged#readme)
+Run linters against staged git files and don't let 💩 slip into your code base!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Install
+    ```
+    yarn add lint-staged --dev
+    ```
 
-### Making a Progressive Web App
+2. Configuration
+    ```
+    touch .lintstagedrc.js
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Edit script
+    ```
+    // package.json
+    script: {
+        ...
+        "lint-staged": "lint-staged",
+        "lint": "npm run lint:js && npm run lint:prettier",
+        "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+        "lint:prettier": "check-prettier lint",
+        "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx",
+        "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+        "prettier": "prettier -c --write \"**/*\""
+    }
+    ```
 
-### Advanced Configuration
+4. Filtering files
+    ```
+    module.exports = {
+        "**/*.{js,jsx,tsx,ts,scss,md,json}": [
+            "prettier --write",
+            "git add"
+        ],
+        "**/*.{js,jsx}": "yarn lint-staged:js",
+        "**/*.{js,ts,tsx}": "yarn lint-staged:js"
+    }
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+5. Edit pre-commit
+    ```
+    yarn lint-staged
+    ```
 
-### Deployment
+## Commitlint
+Helps your team adhering to a commit convention.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Install
+   ```
+   yarn add @commitlint/{cli,config-conventional} -D 
+   ```
 
-### `yarn build` fails to minify
+2. Configuration
+   ```
+   touch .commitlintrc.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   // .commitlintrc.js
+   module.exports = {
+     extends: ['@commitlint/config-conventional'],
+     rules: {
+       'type-enum': [
+         2,
+         'always',
+         [
+           'feat', // 新功能（feature）
+           'fix', // 修补bug
+           'docs', // 文档（documentation）
+           'style', //  格式（不影响代码运行的变动）
+           'refactor', // 重构（即不是新增功能，也不是修改bug的代码变动）
+           'test', // 增加测试
+           'chore', // 构建过程或辅助工具的变动
+         ],
+       ],
+       'scope-empty': [1, 'always'],
+       'body-leading-blank': [2, 'always'],
+       'footer-leading-blank': [2, 'always'],
+     },
+   };
+   ```
+
+3. Husky
+   ```
+   npx husky add .husky/commit-msg "yarn commitlint --edit"
+   ```
