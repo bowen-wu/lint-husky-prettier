@@ -1,0 +1,7 @@
+# Ignore artifacts:
+build
+**/*.md
+**/*.svg
+**/*.ejs
+**/*.html
+package.json
