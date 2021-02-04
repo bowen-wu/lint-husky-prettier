@@ -234,3 +234,31 @@ Helps your team adhering to a commit convention.
    ```
    npx husky add .husky/commit-msg "yarn commitlint --edit"
    ```
+   
+## Individual plugin
+[How to create eslint plugin](https://eslint.org/docs/developer-guide/working-with-plugins#create-a-plugin)
+
+[generator-eslint](npmjs.com/package/generator-eslint)
+
+
+1. Install 
+   ```
+   npm i -g yo
+   npm i -g generator-eslint
+   ```
+   
+2. Create empty file
+   ```
+   mkdir eslint-plugin-demo
+   cd eslint-plugin-demo
+   ```
+   
+3. Eslint:plugin
+   ```
+   yo eslint:plugin
+   ```
+   
+4. Eslint:rule
+   ```
+   yo eslint:rule
+   ```
