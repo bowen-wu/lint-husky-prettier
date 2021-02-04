@@ -241,6 +241,7 @@ Helps your team adhering to a commit convention.
 [generator-eslint](npmjs.com/package/generator-eslint)
 
 
+### Eslint plugin
 1. Install 
    ```
    npm i -g yo

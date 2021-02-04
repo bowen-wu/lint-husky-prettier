@@ -4669,10 +4669,10 @@ eslint-module-utils@^2.6.0:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-bowen-lint@^0.0.23:
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-bowen-lint/-/eslint-plugin-bowen-lint-0.0.23.tgz#255f54e3b6f753870dffe61a4387b128f0cf980e"
-  integrity sha512-Xj+MMlFZYt6BNYiwxAJpp6yOoaoaJvt8BEp3m2xW04Xp13b5XAWO/2s+kxTu5CZ+sEbIaR5uf7yNWMPJ7ZSGXA==
+eslint-plugin-bowen-lint@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-bowen-lint/-/eslint-plugin-bowen-lint-0.1.0.tgz#31df2ed922a79993c64a23d7a1945e0ecf61fd84"
+  integrity sha512-RQ9k24EPPN1UZz3jP7fKWYGTu9xIIcTfTy/tHj5d48DRJ5ZQhJC6ZRc5gtKZPgJXUlDy5BKytKYu6Az+fOLkTA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.14.2"
     eslint-config-airbnb "^18.2.1"
