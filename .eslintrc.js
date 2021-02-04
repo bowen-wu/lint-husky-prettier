@@ -8,6 +8,7 @@ module.exports = {
         'plugin:bowen-lint/importLint',
         'plugin:bowen-lint/reactLint',
         'plugin:bowen-lint/tsLint',
+        'plugin:bowen-lint/prettierLint',
     ],
     rules: {},
 };

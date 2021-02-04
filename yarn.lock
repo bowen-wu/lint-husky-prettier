@@ -4641,6 +4641,11 @@ eslint-config-airbnb@^18.2.1:
     object.assign "^4.1.2"
     object.entries "^1.1.2"
 
+eslint-config-prettier@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-7.2.0.tgz#f4a4bd2832e810e8cc7c1411ec85b3e85c0c53f9"
+  integrity sha512-rV4Qu0C3nfJKPOAhFujFxB7RMP+URFyQqqOZW9DMRD7ZDTFyjaIlETU3xzHELt++4ugC0+Jm084HQYkkJe+Ivg==
+
 eslint-config-react-app@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-6.0.0.tgz#ccff9fc8e36b322902844cbd79197982be355a0e"
@@ -4664,13 +4669,14 @@ eslint-module-utils@^2.6.0:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
-eslint-plugin-bowen-lint@^0.0.18:
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-bowen-lint/-/eslint-plugin-bowen-lint-0.0.18.tgz#797e9460c12607bac1ac3d530d40120d08f5c438"
-  integrity sha512-7K0HuCV/WwJg15bY/LlCNVegaholM74xdeBrW2DxCKAIY6asMQqq0KX3/TnomFl8b/FrwRhe/32lOCCwSOogEw==
+eslint-plugin-bowen-lint@^0.0.23:
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-bowen-lint/-/eslint-plugin-bowen-lint-0.0.23.tgz#255f54e3b6f753870dffe61a4387b128f0cf980e"
+  integrity sha512-Xj+MMlFZYt6BNYiwxAJpp6yOoaoaJvt8BEp3m2xW04Xp13b5XAWO/2s+kxTu5CZ+sEbIaR5uf7yNWMPJ7ZSGXA==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^4.14.2"
     eslint-config-airbnb "^18.2.1"
+    eslint-config-prettier "^7.2.0"
     eslint-plugin-prettier "^3.3.1"
     eslint-plugin-react "^7.22.0"
     eslint-plugin-vue "^7.5.0"
