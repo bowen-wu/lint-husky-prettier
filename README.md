@@ -263,3 +263,5 @@ Helps your team adhering to a commit convention.
    ```
    yo eslint:rule
    ```
+
+### why plugin not config

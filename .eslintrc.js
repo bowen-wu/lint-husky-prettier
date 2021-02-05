@@ -4,8 +4,6 @@ module.exports = {
         es2021: true,
     },
     extends: [
-        'plugin:bowen-lint/baseLint',
-        'plugin:bowen-lint/importLint',
         'plugin:bowen-lint/reactLint',
         'plugin:bowen-lint/tsLint',
         'plugin:bowen-lint/prettierLint',

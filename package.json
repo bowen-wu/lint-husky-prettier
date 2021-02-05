@@ -48,7 +48,7 @@
     "devDependencies": {
         "commitlint-config-bowen-lint": "^0.1.0",
         "eslint": "^7.19.0",
-        "eslint-plugin-bowen-lint": "^0.1.0",
+        "eslint-plugin-bowen-lint": "^0.1.1",
         "husky": "^5.0.8",
         "lint-staged": "^10.5.3",
         "prettier": "2.2.1"
