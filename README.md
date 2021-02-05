@@ -236,10 +236,10 @@ Helps your team adhering to a commit convention.
    ```
    
 ## Individual plugin
+
 [How to create eslint plugin](https://eslint.org/docs/developer-guide/working-with-plugins#create-a-plugin)
 
 [generator-eslint](npmjs.com/package/generator-eslint)
-
 
 ### Eslint plugin
 1. Install 
