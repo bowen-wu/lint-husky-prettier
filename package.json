@@ -46,7 +46,7 @@
         "web-vitals": "^0.2.4"
     },
     "devDependencies": {
-        "commitlint-config-bowen-lint": "^0.1.0",
+        "commitlint-config-bowen-lint": "^0.1.1",
         "eslint": "^7.19.0",
         "eslint-plugin-bowen-lint": "^0.1.1",
         "husky": "^5.0.8",

@@ -3509,10 +3509,10 @@ commander@^6.2.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
 
-commitlint-config-bowen-lint@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/commitlint-config-bowen-lint/-/commitlint-config-bowen-lint-0.1.0.tgz#d67ca80bbaeebedeeeeb9c592f7d993544c3b634"
-  integrity sha512-H/eZMlKo/xMR3XiIaMEhp4YmpVL3eU5Wb/7n/3Leu83UGUVlfmCCuD4eQ6rILPSkmcBQ8cvGmYwOX1cefb1vfg==
+commitlint-config-bowen-lint@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/commitlint-config-bowen-lint/-/commitlint-config-bowen-lint-0.1.1.tgz#0d83a0e3fbc4fd8fd4e25ceebff6612273da9e80"
+  integrity sha512-i107rCFqyIlXY9pgZkriToG2KbIyXEYJsvstd99COf9vZssp8uV0TRmoSaWill0Q00YKgOnC9sUEiNIAGU6/Bg==
   dependencies:
     "@commitlint/cli" "^11.0.0"
     "@commitlint/config-conventional" "^11.0.0"
